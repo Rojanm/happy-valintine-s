@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #ffe4f0 0%, #ffc9de 100%);
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* floating hearts */
+.floating-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  opacity: 0.5;
+  pointer-events: none;
+  animation: float 5s infinite ease-in-out;
+  filter: drop-shadow(0 4px 6px rgba(255, 120, 160, 0.1));
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(6deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* main card */
+.card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 245, 250, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 50px 50px 50px 50px;
+  box-shadow: 0 20px 40px rgba(245, 150, 180, 0.25),
+              0 0 0 2px #fff8fb inset,
+              0 0 0 4px #ffb7c9 inset;
+  max-width: 550px;
+  width: 100%;
+  padding: 2.5rem 2rem 2.8rem 2rem;
+  text-align: center;
+  border: 2px solid #ffe2ec;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 450px) {
+  .card {
+    padding: 2rem 1.2rem 2.3rem 1.2rem;
+    border-radius: 40px;
+  }
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #b93b5f;
+  margin-bottom: 0.2rem;
+  text-shadow: 2px 2px 0 #ffd9e6, 4px 4px 0 rgba(255, 255, 255, 0.6);
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+@media (max-width: 450px) {
+  h1 { font-size: 2.5rem; }
+}
+
+.big-heart {
+  font-size: 5rem;
+  color: #ff90b5;
+  filter: drop-shadow(0 8px 12px #fba9c4);
+  margin: 0.2rem 0 1.5rem 0;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.big-heart:hover {
+  transform: scale(1.1);
+  color: #ff6f9a;
+}
+
+/* play button */
+.play-btn {
+  background: #ff9bb6;
+  border: none;
+  border-radius: 60px;
+  padding: 1rem 2.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 3px #d45f83;
+  box-shadow: 0 10px 0 #b34f6e, 0 6px 20px #ffb0c3;
+  cursor: pointer;
+  transition: all 0.08s linear;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 2px solid #ffeef2;
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 0.5rem;
+}
+
+.play-btn i { font-size: 1.6rem; color: #fff2f6; }
+
+.play-btn:active {
+  transform: translateY(6px);
+  box-shadow: 0 4px 0 #b34f6e, 0 8px 18px #ff9bb6;
+}
+
+.play-btn:hover {
+  background: #ff86a8;
+  box-shadow: 0 10px 0 #a1405d, 0 6px 20px #ff92b5;
+}
+
+.footer-note {
+  margin-top: 1.8rem;
+  font-size: 1rem;
+  color: #c06f89;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.footer-note i { color: #ff5a7c; margin: 0 3px; }
+
+@media (max-width: 600px) {
+  .heart { opacity: 0.3; }
+}
